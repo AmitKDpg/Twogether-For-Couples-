@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes floatingHeart {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(var(--tx), -100vh) rotate(var(--tr)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  position: fixed;
+  color: rgba(236, 72, 153, 0.2);
+  z-index: 0;
+  animation: floatingHeart 15s linear infinite;
+  animation-delay: var(--delay);
+  left: var(--left);
+  bottom: -20px;
+}
+
+.countdown-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.countdown-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,228,230,0.7) 0%, rgba(255,241,242,0.7) 100%);
+  z-index: 0;
+}
